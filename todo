@@ -1,0 +1,43 @@
+
+CureKinetics Class
+
+    x Can instantiate curekinetics model
+    x Define frequency factor A
+    x Define activation energy E
+    x Built in gas constant R
+    x Define reaction order n and m
+
+    Mechanism Function
+    x Mechanism function computes correctly for nth order
+    x f(0) = 1
+    x f(1) = 0
+    x f(0.5 | n = 2, m = 0) = 0.25
+    x Mechanism function computes correctly for nth order
+    x f(0) = 0
+    x f(1) = 0
+    x f(0.5 | n = 2, m = 1) = 0.125
+
+    Rate Computation
+    x Verify compute_arrhenius equation
+    x compute the conversion rate
+    x update the current conversion given time, conversion, and dtime
+
+    Get conversion history given time and temperature history
+    x compute_conversion_history returns an n-length np.ndarray in range [0, 1]
+    x raise exception if the length of the temperature array != length of time array
+    x verify full conversion from the Martin data and matches peak heat flow
+
+    x return the conversion history for a given isothermal case
+    x return the conversion history for a given ramp rate
+
+DSCData Class
+    x Can instantiate the DSCData class
+    x Can add the data file location
+    x Raise exception if the data file does not exist
+    x Can read the data file using xlrd
+    x Can find the sample mass in the data file
+    x Can store the time history of the data
+    x Can store the temperature history of the data
+    x Can store the normalized heat flow history of the data
+    x Can determine the limits on the cure profile
+    x Can compute the area under the curve to determine the heat of reaction
